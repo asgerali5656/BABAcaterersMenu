@@ -1,9 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR68EQPZ2V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TR68EQPZ2V', {
+            'send_page_view': true,
+            'page_title': 'BABA Caterers Menu',
+            'page_location': window.location.href
+        });
+    </script>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uvyp6b5cul");
+    </script>
+    
+    <!-- Hotjar Tracking Code -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:5264089,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BABA Caterers Menu</title>
+    <meta name="description" content="BABA Caterers - Premium catering services for weddings, parties, and corporate events in Ahmedabad">
+    <title>BABA Caterers Menu | Premium Catering Services</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
         
@@ -42,6 +77,7 @@
             border-radius: 50%;
             padding: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
         
         .header-logo img {
@@ -88,11 +124,11 @@
             display: none;
         }
         
-                    @media print {
-            .order-btn, .selection-info {
+        @media print {
+            .order-btn, .selection-info, .print-btn {
                 display: none;
             }
-        }
+            
             body {
                 padding: 0;
                 background: white;
@@ -145,10 +181,6 @@
                 background: rgba(255, 215, 0, 0.2);
                 border-radius: 5px;
                 margin: 0 5px;
-            }
-            
-            .print-btn {
-                display: none;
             }
         }
         
@@ -216,10 +248,6 @@
             background: rgba(220, 20, 60, 0.1);
             font-weight: 600;
             color: #8B0000;
-        }
-        
-        .item::before {
-            display: none;
         }
         
         .footer {
@@ -296,6 +324,7 @@
             justify-content: center;
             transition: all 0.3s;
             cursor: pointer;
+            text-decoration: none;
             overflow: hidden;
             padding: 8px;
         }
@@ -403,19 +432,163 @@
             }
         }
         
-
-        
         @media (max-width: 768px) {
-            .items {
-                grid-template-columns: 1fr;
+            body {
+                padding: 0;
             }
             
-            .header h1 {
+            .menu-container {
+                box-shadow: none;
+            }
+            
+            .items {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .header {
+                padding: 20px 15px 30px;
+            }
+            
+            .header-logo {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 15px;
                 font-size: 36px;
             }
             
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            .header .contact {
+                font-size: 16px;
+            }
+            
             .content {
-                padding: 30px 25px;
+                padding: 25px 15px;
+            }
+            
+            .category {
+                margin-bottom: 30px;
+            }
+            
+            .category-title {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+            
+            .item {
+                font-size: 14px;
+                padding: 10px 0;
+                padding-left: 35px;
+            }
+            
+            .item:hover {
+                padding-left: 35px;
+            }
+            
+            .watermark {
+                font-size: 60px;
+            }
+            
+            .footer {
+                padding: 30px 20px;
+            }
+            
+            .footer h3 {
+                font-size: 24px;
+            }
+            
+            .footer-contact {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .contact-item {
+                font-size: 14px;
+            }
+            
+            .social-icons {
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .footer-tagline {
+                font-size: 14px;
+            }
+            
+            .print-btn {
+                bottom: 100px;
+                right: 15px;
+                padding: 12px 20px;
+                font-size: 14px;
+                border-radius: 30px;
+            }
+            
+            .order-btn {
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - 30px);
+                max-width: 350px;
+                padding: 15px 25px;
+                font-size: 15px;
+                justify-content: center;
+            }
+            
+            .selection-info {
+                top: 10px;
+                right: 10px;
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+            
+            .page-footer {
+                font-size: 11px;
+                padding: 8px 10px;
+            }
+            
+            .page-footer a {
+                display: inline-block;
+                margin: 2px;
+                padding: 3px 6px;
+                font-size: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .category-title {
+                font-size: 20px;
+            }
+            
+            .item {
+                font-size: 13px;
+            }
+            
+            .watermark {
+                font-size: 45px;
+            }
+            
+            .print-btn {
+                bottom: 90px;
+                right: 10px;
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+            
+            .order-btn {
+                padding: 12px 20px;
+                font-size: 14px;
             }
         }
     </style>
@@ -427,7 +600,7 @@
             📞 <strong>BABA CATERERS</strong> | 
             <a href="tel:9565655574">Call: 9565655574</a> | 
             <a href="https://wa.me/919565655574">WhatsApp: 9565655574</a> | 
-            <a href="mailto:info@babacaterers.com">Email Us</a>
+            <a href="mailto:asgeralimtc@gmail.com">Email Us</a>
         </div>
         
         <div class="header">
@@ -522,17 +695,50 @@
             <div class="category">
                 <h2 class="category-title">Chicken Tikkas & Tandoori</h2>
                 <div class="items">
-                    <div class="item">Chicken Tandoori</div>
-                    <div class="item">Chicken White Tandoori</div>
-                    <div class="item">Chicken Tikka Masala</div>
-                    <div class="item">Chicken Malai Tikka</div>
-                    <div class="item">Chicken Pahadi Tikka</div>
-                    <div class="item">Chicken Tikkan Tikka</div>
-                    <div class="item">Chicken Tiranga Tikka</div>
-                    <div class="item">Chicken White Tikka</div>
-                    <div class="item">Paneer Green Tikka</div>
-                    <div class="item">Paneer White Tikka</div>
-                    <div class="item">Paneer Tikka Masala</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Tandoori">
+                        <span>Chicken Tandoori</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken White Tandoori">
+                        <span>Chicken White Tandoori</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Tikka Masala">
+                        <span>Chicken Tikka Masala</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Malai Tikka">
+                        <span>Chicken Malai Tikka</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Pahadi Tikka">
+                        <span>Chicken Pahadi Tikka</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Tikkan Tikka">
+                        <span>Chicken Tikkan Tikka</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Tiranga Tikka">
+                        <span>Chicken Tiranga Tikka</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken White Tikka">
+                        <span>Chicken White Tikka</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Paneer Green Tikka">
+                        <span>Paneer Green Tikka</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Paneer White Tikka">
+                        <span>Paneer White Tikka</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Paneer Tikka Masala">
+                        <span>Paneer Tikka Masala</span>
+                    </label>
                 </div>
             </div>
 
@@ -540,22 +746,70 @@
             <div class="category">
                 <h2 class="category-title">Chicken Rolls & Fried Specials</h2>
                 <div class="items">
-                    <div class="item">Chicken Samosa</div>
-                    <div class="item">Chicken Chinese Roll</div>
-                    <div class="item">Chicken Shahi Roll</div>
-                    <div class="item">Chicken Italian Roll</div>
-                    <div class="item">Chicken Mini Roll</div>
-                    <div class="item">Chicken Nawabi Roll</div>
-                    <div class="item">Chicken Lukhnowi Roll</div>
-                    <div class="item">Chicken Seekh</div>
-                    <div class="item">Chicken Papdi</div>
-                    <div class="item">Chicken Poplet</div>
-                    <div class="item">Chicken Basket</div>
-                    <div class="item">Chicken Patties</div>
-                    <div class="item">Chicken Koliwada</div>
-                    <div class="item">Chicken Lollipop</div>
-                    <div class="item">Chicken Cutless</div>
-                    <div class="item">Chicken Crispy</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Samosa">
+                        <span>Chicken Samosa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Chinese Roll">
+                        <span>Chicken Chinese Roll</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Shahi Roll">
+                        <span>Chicken Shahi Roll</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Italian Roll">
+                        <span>Chicken Italian Roll</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Mini Roll">
+                        <span>Chicken Mini Roll</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Nawabi Roll">
+                        <span>Chicken Nawabi Roll</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Lukhnowi Roll">
+                        <span>Chicken Lukhnowi Roll</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Seekh">
+                        <span>Chicken Seekh</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Papdi">
+                        <span>Chicken Papdi</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Poplet">
+                        <span>Chicken Poplet</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Basket">
+                        <span>Chicken Basket</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Patties">
+                        <span>Chicken Patties</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Koliwada">
+                        <span>Chicken Koliwada</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Lollipop">
+                        <span>Chicken Lollipop</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Cutless">
+                        <span>Chicken Cutless</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Crispy">
+                        <span>Chicken Crispy</span>
+                    </label>
                 </div>
             </div>
 
@@ -563,24 +817,78 @@
             <div class="category">
                 <h2 class="category-title">Chicken Special Dishes</h2>
                 <div class="items">
-                    <div class="item">Chicken Chocolaty</div>
-                    <div class="item">Fancy Chicken</div>
-                    <div class="item">Schezwan Chicken</div>
-                    <div class="item">Breast Chicken</div>
-                    <div class="item">Palak Chicken</div>
-                    <div class="item">Palak Crispy</div>
-                    <div class="item">Mugal Crispy</div>
-                    <div class="item">Makhmali Tikki</div>
-                    <div class="item">Tiranga Tikki</div>
-                    <div class="item">Shalimar Jheenga</div>
-                    <div class="item">Albek Fish</div>
-                    <div class="item">Chicken Gulab Khas</div>
-                    <div class="item">Chicken Kulfi</div>
-                    <div class="item">Chicken Sizzler</div>
-                    <div class="item">Chicken Drum Stick</div>
-                    <div class="item">Chicken Roasted</div>
-                    <div class="item">Chicken Murg Musallam</div>
-                    <div class="item">Chicken Stick</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Chocolaty">
+                        <span>Chicken Chocolaty</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Fancy Chicken">
+                        <span>Fancy Chicken</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Schezwan Chicken">
+                        <span>Schezwan Chicken</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Breast Chicken">
+                        <span>Breast Chicken</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Palak Chicken">
+                        <span>Palak Chicken</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Palak Crispy">
+                        <span>Palak Crispy</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mugal Crispy">
+                        <span>Mugal Crispy</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Makhmali Tikki">
+                        <span>Makhmali Tikki</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Tiranga Tikki">
+                        <span>Tiranga Tikki</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Shalimar Jheenga">
+                        <span>Shalimar Jheenga</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Albek Fish">
+                        <span>Albek Fish</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Gulab Khas">
+                        <span>Chicken Gulab Khas</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Kulfi">
+                        <span>Chicken Kulfi</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Sizzler">
+                        <span>Chicken Sizzler</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Drum Stick">
+                        <span>Chicken Drum Stick</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Roasted">
+                        <span>Chicken Roasted</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Murg Musallam">
+                        <span>Chicken Murg Musallam</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Stick">
+                        <span>Chicken Stick</span>
+                    </label>
                 </div>
             </div>
 
@@ -588,25 +896,82 @@
             <div class="category">
                 <h2 class="category-title">Chicken Rice & Biryani</h2>
                 <div class="items">
-                    <div class="item">Chicken Akhni Pulao</div>
-                    <div class="item">Chicken Dum Pulao</div>
-                    <div class="item">Chicken Dilli Pulao</div>
-                    <div class="item">Chicken Lucknowi Pulao</div>
-                    <div class="item">Chicken Pulao</div>
-                    <div class="item">Chicken Kofta Pulao</div>
-                    <div class="item">Chicken Biryani</div>
-                    <div class="item">Chicken Tikka Biryani</div>
-                    <div class="item">Chicken White Biryani</div>
-                    <div class="item">Chicken Tandoori Biryani</div>
-                    <div class="item">Chicken Sizzler Biryani</div>
-                    <div class="item">Chicken Seekh Malai Biryani</div>
-                    <div class="item">Chicken Seekh Red Biryani</div>
-                    <div class="item">Chicken Drum Stick Biryani</div>
-                    <div class="item">Chicken Malai Tikka Biryani</div>
-                    <div class="item">Butter Chicken Biryani</div>
-                    <div class="item">Chicken Fried Rice</div>
-                    <div class="item">Chicken Schez Fried Rice</div>
-                    <div class="item">Egg Biryani</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Akhni Pulao">
+                        <span>Chicken Akhni Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Dum Pulao">
+                        <span>Chicken Dum Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Dilli Pulao">
+                        <span>Chicken Dilli Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Lucknowi Pulao">
+                        <span>Chicken Lucknowi Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Pulao">
+                        <span>Chicken Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Kofta Pulao">
+                        <span>Chicken Kofta Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Biryani">
+                        <span>Chicken Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Tikka Biryani">
+                        <span>Chicken Tikka Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken White Biryani">
+                        <span>Chicken White Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Tandoori Biryani">
+                        <span>Chicken Tandoori Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Sizzler Biryani">
+                        <span>Chicken Sizzler Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Seekh Malai Biryani">
+                        <span>Chicken Seekh Malai Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Seekh Red Biryani">
+                        <span>Chicken Seekh Red Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Drum Stick Biryani">
+                        <span>Chicken Drum Stick Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Malai Tikka Biryani">
+                        <span>Chicken Malai Tikka Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Butter Chicken Biryani">
+                        <span>Butter Chicken Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Fried Rice">
+                        <span>Chicken Fried Rice</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Schez Fried Rice">
+                        <span>Chicken Schez Fried Rice</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Egg Biryani">
+                        <span>Egg Biryani</span>
+                    </label>
                 </div>
             </div>
 
@@ -614,27 +979,90 @@
             <div class="category">
                 <h2 class="category-title">Chicken Curries & Gravies</h2>
                 <div class="items">
-                    <div class="item">Chicken Korma</div>
-                    <div class="item">Chicken Green Korma</div>
-                    <div class="item">Chicken White Korma</div>
-                    <div class="item">Chicken Shahi Korma</div>
-                    <div class="item">Chicken Laziz Korma</div>
-                    <div class="item">Chicken Tikka Masala</div>
-                    <div class="item">Chicken Angara</div>
-                    <div class="item">Chicken Curry</div>
-                    <div class="item">Chicken Achari</div>
-                    <div class="item">Chicken Kadai</div>
-                    <div class="item">Chicken Rasida</div>
-                    <div class="item">Chicken Butter</div>
-                    <div class="item">Chicken Masala</div>
-                    <div class="item">Chicken Stew</div>
-                    <div class="item">Chicken Chilli</div>
-                    <div class="item">Chicken Manchurian</div>
-                    <div class="item">Chicken Sukha</div>
-                    <div class="item">Chicken Kolhapuri</div>
-                    <div class="item">Chicken Kheema</div>
-                    <div class="item">Chicken Afghani</div>
-                    <div class="item">Chicken Roast</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Korma">
+                        <span>Chicken Korma</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Green Korma">
+                        <span>Chicken Green Korma</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken White Korma">
+                        <span>Chicken White Korma</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Shahi Korma">
+                        <span>Chicken Shahi Korma</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Laziz Korma">
+                        <span>Chicken Laziz Korma</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Tikka Masala Curry">
+                        <span>Chicken Tikka Masala</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Angara">
+                        <span>Chicken Angara</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Curry">
+                        <span>Chicken Curry</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Achari">
+                        <span>Chicken Achari</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Kadai">
+                        <span>Chicken Kadai</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Rasida">
+                        <span>Chicken Rasida</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Butter">
+                        <span>Chicken Butter</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Masala">
+                        <span>Chicken Masala</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Stew">
+                        <span>Chicken Stew</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Chilli">
+                        <span>Chicken Chilli</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Manchurian">
+                        <span>Chicken Manchurian</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Sukha">
+                        <span>Chicken Sukha</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Kolhapuri">
+                        <span>Chicken Kolhapuri</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Kheema">
+                        <span>Chicken Kheema</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Afghani">
+                        <span>Chicken Afghani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chicken Roast">
+                        <span>Chicken Roast</span>
+                    </label>
                 </div>
             </div>
 
@@ -642,19 +1070,58 @@
             <div class="category">
                 <h2 class="category-title">Mutton Starters & Kebabs</h2>
                 <div class="items">
-                    <div class="item">Mutton Lukhnavi Seekh</div>
-                    <div class="item">Mutton Harabhara Kabab</div>
-                    <div class="item">Mutton Mini Roll</div>
-                    <div class="item">Mutton Chap Fry</div>
-                    <div class="item">Mutton Patties</div>
-                    <div class="item">Mutton Cutless</div>
-                    <div class="item">Mutton Samosa</div>
-                    <div class="item">Mutton Hungama</div>
-                    <div class="item">Mutton Shami Kabab</div>
-                    <div class="item">Mutton Nurgis Kabab</div>
-                    <div class="item">Mutton Seekh Kabab</div>
-                    <div class="item">Mutton Roll</div>
-                    <div class="item">Mutton Tandoori Ran</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Lukhnavi Seekh">
+                        <span>Mutton Lukhnavi Seekh</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Harabhara Kabab">
+                        <span>Mutton Harabhara Kabab</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Mini Roll">
+                        <span>Mutton Mini Roll</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Chap Fry">
+                        <span>Mutton Chap Fry</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Patties">
+                        <span>Mutton Patties</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Cutless">
+                        <span>Mutton Cutless</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Samosa">
+                        <span>Mutton Samosa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Hungama">
+                        <span>Mutton Hungama</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Shami Kabab">
+                        <span>Mutton Shami Kabab</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Nurgis Kabab">
+                        <span>Mutton Nurgis Kabab</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Seekh Kabab">
+                        <span>Mutton Seekh Kabab</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Roll">
+                        <span>Mutton Roll</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Tandoori Ran">
+                        <span>Mutton Tandoori Ran</span>
+                    </label>
                 </div>
             </div>
 
@@ -662,17 +1129,50 @@
             <div class="category">
                 <h2 class="category-title">Mutton Rice & Biryani</h2>
                 <div class="items">
-                    <div class="item">Mutton Lukhnawi Biryani</div>
-                    <div class="item">Zam Zam Biryani</div>
-                    <div class="item">Mutton Biryani</div>
-                    <div class="item">White Mutton Biryani</div>
-                    <div class="item">Green Mutton Biryani</div>
-                    <div class="item">Boneless Mutton Biryani</div>
-                    <div class="item">Mutton Capital Pulao</div>
-                    <div class="item">Masoor Pulao</div>
-                    <div class="item">Mutton Lakhnawai Pulao</div>
-                    <div class="item">Mutton Akhni Pulao</div>
-                    <div class="item">Mutton Pulao</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Lukhnawi Biryani">
+                        <span>Mutton Lukhnawi Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Zam Zam Biryani">
+                        <span>Zam Zam Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Biryani">
+                        <span>Mutton Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="White Mutton Biryani">
+                        <span>White Mutton Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Green Mutton Biryani">
+                        <span>Green Mutton Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Boneless Mutton Biryani">
+                        <span>Boneless Mutton Biryani</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Capital Pulao">
+                        <span>Mutton Capital Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Masoor Pulao">
+                        <span>Masoor Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Lakhnawai Pulao">
+                        <span>Mutton Lakhnawai Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Akhni Pulao">
+                        <span>Mutton Akhni Pulao</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Pulao">
+                        <span>Mutton Pulao</span>
+                    </label>
                 </div>
             </div>
 
@@ -680,26 +1180,86 @@
             <div class="category">
                 <h2 class="category-title">Mutton Curries & Gravies</h2>
                 <div class="items">
-                    <div class="item">Mutton Khichda</div>
-                    <div class="item">Mutton Khichda White</div>
-                    <div class="item">Mutton Kheema</div>
-                    <div class="item">Mutton Kheema Khichdi</div>
-                    <div class="item">Mutton Achari</div>
-                    <div class="item">Mutton Rasida</div>
-                    <div class="item">Mutton Korma</div>
-                    <div class="item">Mutton Angara</div>
-                    <div class="item">Mutton Green Korma</div>
-                    <div class="item">Mutton White Korma</div>
-                    <div class="item">Mutton Masala</div>
-                    <div class="item">Mutton Bhuna</div>
-                    <div class="item">Mutton Rogan Josh</div>
-                    <div class="item">Mutton Sukha</div>
-                    <div class="item">Mutton Kadahi</div>
-                    <div class="item">Mutton Kolhapuri</div>
-                    <div class="item">Aloo Gosht</div>
-                    <div class="item">Bhaji Gosht</div>
-                    <div class="item">Masoor Gosht</div>
-                    <div class="item">Mutton Bhaji Gosht</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Khichda">
+                        <span>Mutton Khichda</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Khichda White">
+                        <span>Mutton Khichda White</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Kheema">
+                        <span>Mutton Kheema</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Kheema Khichdi">
+                        <span>Mutton Kheema Khichdi</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Achari">
+                        <span>Mutton Achari</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Rasida">
+                        <span>Mutton Rasida</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Korma">
+                        <span>Mutton Korma</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Angara">
+                        <span>Mutton Angara</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Green Korma">
+                        <span>Mutton Green Korma</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton White Korma">
+                        <span>Mutton White Korma</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Masala">
+                        <span>Mutton Masala</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Bhuna">
+                        <span>Mutton Bhuna</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Rogan Josh">
+                        <span>Mutton Rogan Josh</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Sukha">
+                        <span>Mutton Sukha</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Kadahi">
+                        <span>Mutton Kadahi</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Kolhapuri">
+                        <span>Mutton Kolhapuri</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Aloo Gosht">
+                        <span>Aloo Gosht</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Bhaji Gosht">
+                        <span>Bhaji Gosht</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Masoor Gosht">
+                        <span>Masoor Gosht</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutton Bhaji Gosht">
+                        <span>Mutton Bhaji Gosht</span>
+                    </label>
                 </div>
             </div>
 
@@ -707,18 +1267,54 @@
             <div class="category">
                 <h2 class="category-title">Vegetarian Delights</h2>
                 <div class="items">
-                    <div class="item">Paneer Koliwada</div>
-                    <div class="item">Paneer Kolhapuri</div>
-                    <div class="item">Veg. Samosa</div>
-                    <div class="item">Veg. Makhanwala</div>
-                    <div class="item">Mutter Paneer</div>
-                    <div class="item">Palak Paneer</div>
-                    <div class="item">Masala Paneer Makhanwala</div>
-                    <div class="item">Veg. Patties</div>
-                    <div class="item">Aloo Wada</div>
-                    <div class="item">Aloo Chat</div>
-                    <div class="item">Ragda Batata</div>
-                    <div class="item">Chana Batata</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Paneer Koliwada">
+                        <span>Paneer Koliwada</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Paneer Kolhapuri">
+                        <span>Paneer Kolhapuri</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Veg. Samosa">
+                        <span>Veg. Samosa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Veg. Makhanwala">
+                        <span>Veg. Makhanwala</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mutter Paneer">
+                        <span>Mutter Paneer</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Palak Paneer">
+                        <span>Palak Paneer</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Masala Paneer Makhanwala">
+                        <span>Masala Paneer Makhanwala</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Veg. Patties">
+                        <span>Veg. Patties</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Aloo Wada">
+                        <span>Aloo Wada</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Aloo Chat">
+                        <span>Aloo Chat</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Ragda Batata">
+                        <span>Ragda Batata</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chana Batata">
+                        <span>Chana Batata</span>
+                    </label>
                 </div>
             </div>
 
@@ -726,15 +1322,42 @@
             <div class="category">
                 <h2 class="category-title">Breads</h2>
                 <div class="items">
-                    <div class="item">Bakery Naan</div>
-                    <div class="item">Bakery Pav</div>
-                    <div class="item">Rumali Roti</div>
-                    <div class="item">Chapati Roti</div>
-                    <div class="item">Tandoori Roti</div>
-                    <div class="item">Lachcha Paratha</div>
-                    <div class="item">Seekhwala Paratha</div>
-                    <div class="item">Poori</div>
-                    <div class="item">Reshmi Paratha</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Bakery Naan">
+                        <span>Bakery Naan</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Bakery Pav">
+                        <span>Bakery Pav</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Rumali Roti">
+                        <span>Rumali Roti</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Chapati Roti">
+                        <span>Chapati Roti</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Tandoori Roti">
+                        <span>Tandoori Roti</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Lachcha Paratha">
+                        <span>Lachcha Paratha</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Seekhwala Paratha">
+                        <span>Seekhwala Paratha</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Poori">
+                        <span>Poori</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Reshmi Paratha">
+                        <span>Reshmi Paratha</span>
+                    </label>
                 </div>
             </div>
 
@@ -742,23 +1365,74 @@
             <div class="category">
                 <h2 class="category-title">Sweets & Desserts</h2>
                 <div class="items">
-                    <div class="item">Gajar Halwa</div>
-                    <div class="item">Dudhi Halwa</div>
-                    <div class="item">Pav Halwa</div>
-                    <div class="item">Pineapple Halwa</div>
-                    <div class="item">Rawa Halwa</div>
-                    <div class="item">Rawa Special</div>
-                    <div class="item">Mawa Rawa</div>
-                    <div class="item">Milk Rawa</div>
-                    <div class="item">Zarda Rice</div>
-                    <div class="item">Sev Sola Zarda</div>
-                    <div class="item">Tuli Meetha</div>
-                    <div class="item">Asev Korma</div>
-                    <div class="item">Sev Zarda</div>
-                    <div class="item">Gulab Jamun</div>
-                    <div class="item">Kesar Finni</div>
-                    <div class="item">Malai Finni</div>
-                    <div class="item">Ice Cream</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Gajar Halwa">
+                        <span>Gajar Halwa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Dudhi Halwa">
+                        <span>Dudhi Halwa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Pav Halwa">
+                        <span>Pav Halwa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Pineapple Halwa">
+                        <span>Pineapple Halwa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Rawa Halwa">
+                        <span>Rawa Halwa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Rawa Special">
+                        <span>Rawa Special</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Mawa Rawa">
+                        <span>Mawa Rawa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Milk Rawa">
+                        <span>Milk Rawa</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Zarda Rice">
+                        <span>Zarda Rice</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Sev Sola Zarda">
+                        <span>Sev Sola Zarda</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Tuli Meetha">
+                        <span>Tuli Meetha</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Asev Korma">
+                        <span>Asev Korma</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Sev Zarda">
+                        <span>Sev Zarda</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Gulab Jamun">
+                        <span>Gulab Jamun</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Kesar Finni">
+                        <span>Kesar Finni</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Malai Finni">
+                        <span>Malai Finni</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Ice Cream">
+                        <span>Ice Cream</span>
+                    </label>
                 </div>
             </div>
 
@@ -766,9 +1440,18 @@
             <div class="category">
                 <h2 class="category-title">Beverages</h2>
                 <div class="items">
-                    <div class="item">Fresh Juice</div>
-                    <div class="item">Cold Drinks</div>
-                    <div class="item">Water Glass</div>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Fresh Juice">
+                        <span>Fresh Juice</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Cold Drinks">
+                        <span>Cold Drinks</span>
+                    </label>
+                    <label class="item">
+                        <input type="checkbox" class="item-checkbox" data-item="Water Glass">
+                        <span>Water Glass</span>
+                    </label>
                 </div>
             </div>
 
@@ -788,35 +1471,27 @@
                     </div>
                     <div class="contact-item">
                         <span>📧</span>
-                        <a href="mailto:info@babacaterers.com">info@babacaterers.com</a>
+                        <a href="mailto:asgeralimtc@gmail.com">asgeralimtc@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <span>🌐</span>
-                        <a href="https://babacaterers.com" target="_blank">babacaterers.com</a>
+                        <a href="https://babacaterers.vercel.app/" target="_blank">babacaterers.vercel.app/</a>
                     </div>
                 </div>
                 
                 <div class="social-icons">
-                    <div class="social-icon" title="WhatsApp">
-                        <a href="https://wa.me/919565655574" target="_blank">
-                            <img src="whatsapplogo-removebg-preview.png" alt="WhatsApp">
-                        </a>
-                    </div>
-                    <div class="social-icon" title="Instagram">
-                        <a href="https://instagram.com/babacaterers" target="_blank">
-                            <img src="instalogo-removebg-preview.png" alt="Instagram">
-                        </a>
-                    </div>
-                    <div class="social-icon" title="Facebook">
-                        <a href="https://facebook.com/babacaterers" target="_blank">
-                            <img src="fb logo.png" alt="Facebook">
-                        </a>
-                    </div>
-                    <div class="social-icon" title="Call Now">
-                        <a href="tel:9565655574">
-                            <img src="call logo.png" alt="Call Now">
-                        </a>
-                    </div>
+                    <a href="https://wa.me/919565655574" target="_blank" class="social-icon" title="WhatsApp">
+                        <img src="whatsapplogo-removebg-preview.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://instagram.com/baba4caterers" target="_blank" class="social-icon" title="Instagram">
+                        <img src="instalogo-removebg-preview.png" alt="Instagram">
+                    </a>
+                    <a href="https://facebook.com/babacaterers" target="_blank" class="social-icon" title="Facebook">
+                        <img src="fb logo.png" alt="Facebook">
+                    </a>
+                    <a href="tel:9565655574" class="social-icon" title="Call Now">
+                        <img src="call logo.png" alt="Call">
+                    </a>
                 </div>
                 
                 <div class="footer-tagline">
@@ -844,46 +1519,109 @@
     
     <script>
         let selectedItems = new Set();
+        let sessionStartTime = Date.now();
+        let itemClickCount = {};
+        
+        // Track page engagement time
+        window.addEventListener('beforeunload', function() {
+            const timeSpent = Math.round((Date.now() - sessionStartTime) / 1000);
+            gtag('event', 'page_engagement', {
+                'engagement_time_msec': timeSpent * 1000,
+                'session_duration': timeSpent
+            });
+        });
+        
+        // Track scroll depth
+        let maxScrollDepth = 0;
+        window.addEventListener('scroll', function() {
+            const scrollPercentage = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+            if (scrollPercentage > maxScrollDepth) {
+                maxScrollDepth = scrollPercentage;
+                gtag('event', 'scroll_depth', {
+                    'scroll_percentage': scrollPercentage
+                });
+            }
+        });
         
         // Convert all existing items to checkboxes
         document.addEventListener('DOMContentLoaded', function() {
-            const allItems = document.querySelectorAll('.item');
+            const allCheckboxes = document.querySelectorAll('.item-checkbox');
             
-            allItems.forEach(item => {
-                if (!item.querySelector('input[type="checkbox"]')) {
-                    const text = item.textContent.trim();
-                    item.innerHTML = `
-                        <input type="checkbox" class="item-checkbox" data-item="${text}">
-                        <span>${text}</span>
-                    `;
-                    item.style.cursor = 'pointer';
-                    
-                    // Make the whole label clickable
-                    const checkbox = item.querySelector('input[type="checkbox"]');
-                    item.addEventListener('click', function(e) {
-                        if (e.target !== checkbox) {
-                            checkbox.checked = !checkbox.checked;
-                            updateSelection(checkbox);
-                        }
+            // Track page load
+            gtag('event', 'page_view', {
+                'page_title': 'BABA Caterers Menu',
+                'page_location': window.location.href
+            });
+            
+            allCheckboxes.forEach(checkbox => {
+                const item = checkbox.closest('.item');
+                
+                item.addEventListener('click', function(e) {
+                    if (e.target !== checkbox) {
+                        checkbox.checked = !checkbox.checked;
+                        updateSelection(checkbox);
+                    }
+                });
+                
+                checkbox.addEventListener('change', function() {
+                    updateSelection(this);
+                });
+            });
+            
+            // Track social media clicks
+            document.querySelectorAll('.social-icon, .contact-item a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const linkType = this.getAttribute('title') || this.textContent;
+                    gtag('event', 'social_click', {
+                        'link_type': linkType,
+                        'link_url': this.href
                     });
-                    
-                    checkbox.addEventListener('change', function() {
-                        updateSelection(this);
-                    });
-                }
+                });
+            });
+            
+            // Track print button
+            document.querySelector('.print-btn').addEventListener('click', function() {
+                gtag('event', 'print_menu', {
+                    'event_category': 'engagement',
+                    'event_label': 'Print Menu Button'
+                });
             });
         });
         
         function updateSelection(checkbox) {
             const itemName = checkbox.dataset.item;
             const label = checkbox.closest('.item');
+            const category = label.closest('.category').querySelector('.category-title').textContent.replace('◆', '').trim();
             
             if (checkbox.checked) {
                 selectedItems.add(itemName);
                 label.classList.add('checked');
+                
+                // Track item clicks
+                itemClickCount[itemName] = (itemClickCount[itemName] || 0) + 1;
+                
+                // Send to Google Analytics
+                gtag('event', 'select_item', {
+                    'item_name': itemName,
+                    'item_category': category,
+                    'selection_count': selectedItems.size,
+                    'click_count': itemClickCount[itemName]
+                });
+                
+                // Send to Clarity
+                if (window.clarity) {
+                    clarity('set', 'item_selected', itemName);
+                }
             } else {
                 selectedItems.delete(itemName);
                 label.classList.remove('checked');
+                
+                // Track deselection
+                gtag('event', 'deselect_item', {
+                    'item_name': itemName,
+                    'item_category': category,
+                    'selection_count': selectedItems.size
+                });
             }
             
             updateUI();
@@ -924,6 +1662,20 @@
                            `*Total Items: ${selectedItems.size}*\n\n` +
                            `Please contact me with details about tasting arrangement.\n\n` +
                            `Thank you!`;
+            
+            // Track WhatsApp order submission
+            gtag('event', 'whatsapp_order', {
+                'event_category': 'conversion',
+                'event_label': 'WhatsApp Order Sent',
+                'value': selectedItems.size,
+                'items_selected': Array.from(selectedItems).join(', ')
+            });
+            
+            // Track conversion in Clarity
+            if (window.clarity) {
+                clarity('set', 'order_submitted', 'true');
+                clarity('set', 'items_count', selectedItems.size);
+            }
             
             const whatsappURL = `https://wa.me/919565655574?text=${encodeURIComponent(message)}`;
             window.open(whatsappURL, '_blank');
